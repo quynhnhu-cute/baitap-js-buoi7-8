@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Functions</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <h1 style="text-align: center">Chương trình JavaScript</h1>
+    <h5 style="margin-top: 30px">
+      Chào mừng bạn đến với chương trình JavaScript. Hãy tạo mảng để thực hiện
+      các chức năng sau:
+    </h5>
+    <h6>1. Hãy tạo mảng</h6>
+    <div>
+      <label for="">Nhập vào số nguyên:</label>
+
+      <input type="number" id="txtNumber" /><br /><br />
+      <p id="txtIntegerError"></p>
+      <button id="btnAdd">Thêm vào mảng</button>
+      <button id="btnRefresh">Refresh</button>
+    </div>
+    <div id="txtArray" style="margin-top: 20px"></div>
+    <h6>2. Chọn các chức năng sau:</h6>
+    <p>1. Tổng các số dương trong mảng.</p>
+    <p>2. Đếm có bao nhiêu số dương trong mảng.</p>
+    <p>3. Tìm số nhỏ nhất trong mảng.</p>
+    <p>4. Tìm số dương nhỏ nhất trong mảng.</p>
+    <p>
+      5. Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì
+      trả về -1.
+    </p>
+    <p>
+      6. Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn
+      đổi chỗ giá trị).
+    </p>
+    <p>7. Sắp xếp mảng theo thứ tự tăng dần.</p>
+    <p>
+      8. Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố
+      thì trả về – 1.
+    </p>
+    <p>
+      9. Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên?
+    </p>
+    <p>10. So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn.</p>
+    <div>
+      <select name="" id="slFunction" style="width: 70%">
+        <option value="1">Tổng các số dương trong mảng</option>
+        <option value="2">Đếm có bao nhiêu số dương trong mảng</option>
+        <option value="3">Tìm số nhỏ nhất trong mảng</option>
+        <option value="4">Tìm số dương nhỏ nhất trong mảng</option>
+        <option value="5">
+          Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn thì
+          trả về -1
+        </option>
+        <option value="6">
+          Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí muốn
+          đổi chỗ giá trị)
+        </option>
+        <option value="7">Sắp xếp mảng theo thứ tự tăng dần</option>
+        <option value="8">
+          Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên tố
+          thì trả về – 1
+        </option>
+        <option value="9">
+          Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số nguyên?
+        </option>
+        <option value="10">
+          So sánh số lượng số dương và số lượng số âm xem số nào nhiều hơn
+        </option>
+      </select> <br> <br>
+
+      <button id="btnDo">Thực hiện</button>
+    </div>
+    <div id="changeNumberPosition" style="margin-top: 50px">
+      <label for="">Vị trí cần đổi thứ nhất</label>
+      <input type="number" name="" id="txtPos1" /><br /><br />
+      <p id="txtpos1Error" class="error"></p><br>
+      <label for="">Vị trí cần đổi thứ hai</label>
+      <input type="number" name="" id="txtPos2" />
+      <p id="txtpos2Error" class="error"></p><br>
+      <button id="btnChangePosition">Đổi vị trí</button>
+      <button id="btnClose">Đóng</button>
+    </div>
+    <div id="addRealNum"></div>
+    <div
+      id="txtResult"
+      style="
+        margin-top: 30px;
+        font-size: 20px;
+        color: white;
+        background-color: tomato;
+        height: 40px;
+      "
+    ></div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./utils/Validator.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
