@@ -2,10 +2,25 @@
 var arr = [];
 
 var errorSpan = document.getElementById("txtIntegerError");
-errorSpan.style.display = "none";
+
 var validator = new Validator();
 var changeNumberPosition = document.querySelector("#changeNumberPosition");
-changeNumberPosition.style.display = "none";
+
+var addRealNum = document.querySelector("#addRealNum");
+var result = document.querySelector("#txtResult");
+var displayNoneAll = function(){
+  errorSpan.style.display = "none";
+  changeNumberPosition.style.display = "none";
+  addRealNum.style.display = "none";
+  
+}
+displayNoneAll();
+
+
+
+
+
+
 
 // Print array
 var txtArray = document.querySelector("#txtArray");
@@ -50,7 +65,7 @@ btnRefresh.onclick = function () {
 
 // Sum of positive integer in array
 
-var result = document.querySelector("#txtResult");
+
 
 var sumOfPositiveInteger = function () {
   var sum = 0;
@@ -64,6 +79,7 @@ var sumOfPositiveInteger = function () {
 
 // Count positive integer
 var countPositiveInteger = function () {
+  // debugger
   var count = 0;
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] > 0) {
@@ -193,7 +209,7 @@ var checkPrimeNum = function (num) {
 
 // Find first prime number
 var findFirstPrimeNum = function () {
-  debugger;
+  // debugger;
   var firstPrimeNum = -1;
   for (var i = 0; i < arr.length; i++) {
     if (checkPrimeNum(arr[i])) {
@@ -207,6 +223,40 @@ var findFirstPrimeNum = function () {
       : "Số nguyên tố đầu tiên trong mảng là : " + firstPrimeNum;
   result.innerHTML = content;
 };
+
+// Add real number 
+
+var showAddRealNum = function(){
+  
+  addRealNum.style.display = "block";
+}
+
+var btnAddRealNum = document.querySelector("#btnAddRealNum");
+btnAddRealNum.onclick = function(){
+  var txtRealNum = parseFloat(document.querySelector("#txtRealNum").value);
+  arr.push(txtRealNum);
+  window.alert("Thêm vào mảng thành công!");
+}
+
+var btnCountIntegerNum = document.querySelector("#btnCountIntegerNum");
+btnCountIntegerNum.onclick= function(){
+  // debugger
+  var count = 0;
+  for(var i = 0; i < arr.length; i++){
+    
+    if(arr[i] % 1 === 0){
+      count += 1;
+    }
+
+  }
+  result.innerHTML = "Số các số nguyên trong mảng là: " + count;
+  txtArray.innerHTML = printArray();
+}
+
+var btnCloseReal = document.querySelector("#btnCloseReal");
+btnCloseReal.onclick= function(){
+  addRealNum.style.display = "none";
+}
 
 // Compare positive and negative number in array
 
@@ -233,11 +283,12 @@ var compareNumPositiveAndNegative = function () {
 
 var btnDo = document.querySelector("#btnDo");
 btnDo.onclick = function () {
+  var slFunction = document.querySelector("#slFunction").value;
   if (arr.length === 0) {
     result.innerHTML = "Mảng hiện đang rỗng !";
     return;
   }
-  var slFunction = document.querySelector("#slFunction").value;
+ 
 
   switch (parseInt(slFunction)) {
     case 1:
@@ -264,7 +315,7 @@ btnDo.onclick = function () {
     case 8:
       findFirstPrimeNum();
       break;
-    case 9:
+    case 9:showAddRealNum();
       break;
     case 10:
       compareNumPositiveAndNegative();
